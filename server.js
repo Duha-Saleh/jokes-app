@@ -1,3 +1,4 @@
+
 'use strict';
 const express=require('express');
 const cors =require('cors');
@@ -18,6 +19,7 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 app.use(methodOverride('_method'));
+
 client.connect().then(() => {
     app.listen(PORT,() => console.log(`Listening on port ${PORT}`));
 });
@@ -45,6 +47,7 @@ res.send('Not avialable Jokes')
 
 
 function home (req,res){
+
     let url=`https://official-joke-api.appspot.com/jokes/programming/ten`;
    
     superagent.get(url).then(data=>{
