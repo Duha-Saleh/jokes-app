@@ -1,0 +1,22 @@
+<section>
+<ul>
+  <% arrray.foreach(element => {%>
+    <li>
+    <h2> Joke # <%= element.id%> </h2>
+<p>  <%= element.type%> </p>
+<p>  <%= element.setup%></p>
+<p> <%= element.punchline%> </p>
+
+<form action="/add" method="POST">
+<input type='hidden' name='id' value='<%= element.id%>'>
+<input type='hidden' name='type' value='<%= element.type%>'>
+<input type='hidden' name='setup' value='<%= element.setup%>'>
+<input type='hidden' name='punchline' value='<%= element.punchline%>'>
+<button type="submit"> Add to my Jokes list </button>
+</form>
+<% })%>
+
+</li>
+</ul>
+</section>
+

@@ -1,0 +1,18 @@
+<section>
+    <ul>
+      <% arrray.foreach(element => {%>
+        <li>
+    <p>  <%= element.type%> </p>
+    <p>  <%= element.setup%></p>
+    <p> <%= element.punchline%> </p>
+    
+    <form action="/details/<%= element.id%>" method="GET">
+    <button type="submit"> View details </button>
+    </form>
+    <% })%>
+
+    </li>
+    </ul>
+    </section>
+    
+    
